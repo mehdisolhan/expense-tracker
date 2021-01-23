@@ -13,6 +13,8 @@ export const AddTransaction = () => {
       text: text,
       amount: +amount,
     };
+    setText("");
+    setAmount(0);
     addTransaction(newTransaction);
   };
   return (
@@ -24,6 +26,7 @@ export const AddTransaction = () => {
           <input
             type="text"
             value={text}
+            required
             onChange={(e) => setText(e.target.value)}
             placeholder="Enter text..."
           />
@@ -36,6 +39,7 @@ export const AddTransaction = () => {
           <input
             type="number"
             value={amount}
+            required
             onChange={(e) => setAmount(e.target.value)}
             placeholder="Enter amount..."
           />
